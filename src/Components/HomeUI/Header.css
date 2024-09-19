@@ -1,0 +1,32 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.Nav_Container{
+    margin-top: 10px;
+}
+.Nav_Container a{
+    text-decoration: none;
+    text-transform: capitalize;
+    margin: 10px;
+    color: #7A8895;
+    font-size: 1.5rem;
+}
+.header_Btn{
+    width: 120px;
+    border: none;
+    outline: none;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    border: 1px solid #FE4C55;
+    transition: .5s all ease-in;
+    text-transform: capitalize;
+    background-color: transparent;
+}
+.header_Btn:hover{
+background: #FE4C55;
+color: white;
+}
