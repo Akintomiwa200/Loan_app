@@ -1,0 +1,132 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.Nav_Container{
+    margin-top: 10px;
+}
+.Nav_Container a{
+    text-decoration: none;
+    text-transform: capitalize;
+    margin: 10px;
+    color: #7A8895;
+    font-size: 1.5rem;
+}
+.btn_Link{
+    text-decoration: none;
+    color: black;
+}
+.header_Btn{
+    width: 120px;
+    border: none;
+    outline: none;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    border: 1px solid #FE4C55;
+    transition: .5s all ease-in;
+    text-transform: capitalize;
+    background-color: transparent;
+}
+.header_Btn:hover{
+background: #FE4C55;
+color: white;
+}
+.menuBtn{
+    background-color:transparent;
+    padding: 10px;
+    width: 100px;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    display: none;
+}
+
+@media only screen and (max-width:768px) {
+    .header{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    .Nav_Container{
+        margin-top: 10px;
+        display: none;
+    }
+    .Nav_Container a{
+        text-decoration: none;
+        text-transform: capitalize;
+        margin: 10px;
+        color: #7A8895;
+        font-size: 1.5rem;
+    }
+    .btn_Link{
+        text-decoration: none;
+        color: black;
+    }
+    .header_Btn{
+        width: 120px;
+        border: none;
+        outline: none;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        border: 1px solid #FE4C55;
+        transition: .5s all ease-in;
+        text-transform: capitalize;
+        background-color: transparent;
+        display: none;
+    }
+    .header_Btn:hover{
+    background: #FE4C55;
+    color: white;
+    }
+    .mobile_header{
+        text-align: center;
+        animation-name: slideing_header;
+        animation-duration: .5s;
+    }
+    @keyframes slideing_header {
+     0%{transform: translateX(-150px);}
+    }
+    
+    .menuBtn{
+        background-color:transparent;
+        padding: 10px;
+        width: 100px;
+        border: none;
+        outline: none;
+        font-size: 1.5rem;
+        font-weight: bolder;
+        display: block;
+    }
+    .mobile_header_Btn{
+        width: 120px;
+        border: none;
+        outline: none;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        border: 1px solid #FE4C55;
+        transition: .5s all ease-in;
+        text-transform: capitalize;
+        background-color: transparent;
+        display: block;
+        margin: 20px;
+    }
+    .mobile_header_Button-Container{
+       margin-left: 97px;
+    }
+     .mobLink{
+        text-decoration: none;
+        text-transform: capitalize;
+        margin: 10px;
+        color: #7A8895;
+        font-size: 1.5rem;
+        display: block;
+     }
+}

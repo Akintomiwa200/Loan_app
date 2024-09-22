@@ -1,0 +1,14 @@
+.main {
+    display: flex;
+    width: 13vw;
+    height: 10vh;
+    background: white;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    justify-content: center;
+    gap: 0.2em;
+    border-radius: 12px;
+    cursor: pointer;
+}

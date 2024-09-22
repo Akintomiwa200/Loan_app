@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+
+
+.main {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 93vh;
+}
+
+.bigcard {
+    display: flex;
+    flex-direction: column;
+    height: 25vh;
+    justify-content: center;
+    width: 72vw;
+    margin-bottom: 2em;
+}
+
+.good {
+    font-weight: 550;
+    font-size: 2em;
+}
+
+.big {
+    display: flex;
+    gap: 3em;
+    height: 22vh;
+    width: 72vw;
+}
+
+.smallcard {
+    height: 15vh;
+}
+
+.small {
+    display: flex;
+    gap: 1.7em;
+}
+
+.list {
+    display: flex;
+    width: 70vw;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.5em 0;
+    height: 7vh;
+}
+
+.list h2 {
+    font-weight: 600;
+    font-size: 1.3em;
+}
+
+.list h1 {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    cursor: pointer;
+    color: red;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid red;
+}
+
+.content {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    width: 72vw;
+    border-radius: 10px;
+    align-items: center;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.list2 {
+    display: flex;
+    width: 65vw;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.5em 0;
+    height: 7vh;
+}
+
+.list2 h2 {
+    font-weight: 600;
+    font-size: 1.3em;
+}
+
+.list2 p {
+    color: gray;
+}
+
+.list2 h1 {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    cursor: pointer;
+    color: red;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid red;
+}
+
+.blunt {
+    font-size: 1.3em;
+}

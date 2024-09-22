@@ -1,0 +1,158 @@
+.hero_Display_Container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.heroText {
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 10px;
+    color: black;
+}
+
+.hero_Text_Box {
+    margin-top: 100px;
+}
+
+.hero_P {
+    margin: 20px;
+    font-size: 1.5rem;
+    color: #7A8895;
+    text-transform: capitalize;
+}
+
+.pH {
+    display: block;
+}
+
+.hero_Btn {
+    width: 120px;
+    border: none;
+    outline: none;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    border: 1px solid #FE4C55;
+    transition: .5s all ease-in;
+    text-transform: capitalize;
+    background-color: transparent;
+}
+
+.Hero-Button-Container {
+    margin: 10px;
+}
+
+.hero_Btn:hover {
+    background: #FE4C55;
+    color: white;
+}
+
+.three_down_Boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box1 {
+    margin: 20px;
+    width: 400px;
+}
+
+.top_Text {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin: 5px;
+}
+
+.down_text {
+    font-weight: normal;
+    padding: 5px;
+    color: #7A8895;
+}
+
+@media only screen and (max-width:768px) {
+    .hero_Display_Container {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 0px;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .heroText {
+        font-size: 1.9rem;
+        font-weight: 600;
+        margin: 10px;
+    }
+
+    .hero_Text_Box {
+        margin-top: 10px;
+    }
+
+    .heroImg {
+        margin: 0px;
+        width: 300px;
+    }
+
+    .hero_P {
+        margin: 20px;
+        font-size: 1.5rem;
+        color: #7A8895;
+        text-transform: capitalize;
+    }
+
+    .pH {
+        display: block;
+    }
+
+    .hero_Btn {
+        width: 100%;
+        border: none;
+        outline: none;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        border: 1px solid #FE4C55;
+        transition: .5s all ease-in;
+        text-transform: capitalize;
+        background-color: transparent;
+        display: block;
+    }
+
+    .Hero-Button-Container {
+        margin: 20px;
+        display: block;
+    }
+
+    .hero_Btn:hover {
+        background: #FE4C55;
+        color: white;
+    }
+
+    .three_down_Boxes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .box1 {
+        margin: 10px;
+        width: 100%;
+    }
+
+    .top_Text {
+        font-size: 1.5rem;
+        font-weight: bolder;
+        margin: 5px;
+    }
+
+    .down_text {
+        font-weight: normal;
+        padding: 5px;
+        color: #7A8895;
+    }
+}

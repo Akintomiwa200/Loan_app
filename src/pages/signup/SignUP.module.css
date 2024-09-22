@@ -1,0 +1,62 @@
+.sigN,
+.uploadD {
+    display: flex;
+}
+
+.aside {
+    width: 300px;
+    background-image: url("../../assets//BG.png");
+    color: white;
+}
+
+.top_text {
+    font-size: 2.5rem;
+}
+
+.star {
+    color: #FDE047;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.lorem {
+    padding-top: 50px;
+}
+
+.aside_inner_div {
+    margin: 20px;
+}
+
+.downText {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+
+.upload {
+    text-decoration: none;
+    color: white;
+}
+
+@media only screen and (max-width:768px) {
+
+    .sigN,
+    .uploadD {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .aside {
+        width: 100%;
+        background-image: url("../../assets//BG.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 10px;
+    }
+
+    .top_text {
+        font-size: 1.5rem;
+    }
+}

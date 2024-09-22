@@ -1,0 +1,40 @@
+.pagnation {
+    width: 70vw;
+    border-top: 2px solid gray;
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clicks {
+    background: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    width: 8vw;
+    border-radius: 12px;
+}
+
+.pageButton {
+    border: 1px solid black;
+    width: 2em;
+    height: 2em;
+    border-radius: 8px;
+}
+
+.num {
+    display: flex;
+    gap: 0.5em;
+}
+
+.activePage {
+    background-color: red;
+    color: white;
+}
+
+.icons {
+    font-size: 2em;
+}

@@ -1,0 +1,147 @@
+.Footer{
+    background: #24282C;
+   
+     padding: 100px;
+    
+}
+.footer_Button_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.inner-red-div{
+    background: #FE4C55;
+    padding: 70px;
+    border-radius: 20px;
+}
+.Get{
+    font-size: 2rem;
+    font-weight: bolder;
+    text-transform: capitalize;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.red_P{
+    text-align: center;
+}
+.footerBtn{
+    border:  thin black  1.5px ;
+    outline: none;
+    padding: 9px;
+    background-color: transparent;
+    transition: .5s all ease-in;
+    text-transform: capitalize;
+    margin: 10px;
+    border-radius: 10px;
+    width: 170px;
+    font-weight: bolder;
+}
+.footerBtn:Hover{
+    background-color: black;
+    color: white;
+
+}
+.inner_footer_div{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 80px;
+}
+.footer_top_text{
+    margin: 10px;
+    color: #FE4C55;
+    font-size: 1.3rem;
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+.footer_downText{
+    margin: 10px;
+    color: white;
+    text-transform: capitalize;
+}
+.spn_FT{
+    display: block;
+}
+.downFT{
+    margin-top: 20px;
+    color: white;
+}
+.App{
+    margin-top: 30px;
+}
+@media  only screen and (max-width:768px) {
+    .Footer{
+        background: #24282C;
+         padding: 30px;
+         text-align: center;
+    }
+    .footer_Button_div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        flex-wrap: wrap;
+    }
+    .inner-red-div{
+        background: #FE4C55;
+        padding: 20px;
+        border-radius: 20px;
+    }
+    .Get{
+        font-size: 2rem;
+        font-weight: bolder;
+        text-transform: capitalize;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+    .red_P{
+        text-align: center;
+    }
+    .footerBtn{
+        border:  thin black  1.5px ;
+        outline: none;
+        padding: 9px;
+        background-color: transparent;
+        transition: .5s all ease-in;
+        text-transform: capitalize;
+        margin: 10px;
+        border-radius: 10px;
+        width: 100%;
+        font-weight: bolder;
+    }
+    .footerBtn:Hover{
+        background-color: black;
+        color: white;
+    
+    }
+    .inner_footer_div{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap-reverse;
+        margin-top: 80px;
+    }
+    .footer_top_text{
+        margin: 10px;
+        color: #FE4C55;
+        font-size: 1.3rem;
+        font-weight: bolder;
+        text-transform: capitalize;
+    }
+    .footer_downText{
+        margin: 10px;
+        color: white;
+        text-transform: capitalize;
+    }
+    .spn_FT{
+        display: block;
+    }
+    .downFT{
+        margin-top: 20px;
+        color: white;
+    }
+    .App{
+        margin-top: 30px;
+    }
+}

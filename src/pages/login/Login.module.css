@@ -1,0 +1,105 @@
+.General_Form_Container{
+    display: flex;
+}
+.formContainer{
+    margin: 100px;
+}
+.form_top_text{
+    font-size: 2.5rem;
+}
+
+.formP{
+    margin-top:10px; 
+}
+.input{
+    padding: 10px;
+    outline: none;
+    width: 100%;
+    border: .5px black solid;
+}
+.inputDiv{
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+.chckDiv{
+    display: flex;
+    justify-content: space-between;
+}
+.forgot{
+    margin-top: 15px;
+    color:  #FE4C55;
+    text-transform: capitalize;
+}
+.LogBTn{
+    width:100%;
+    background-color: #FE4C55;
+    color: white;
+    border: none;
+    outline: none;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+@media  only screen  and (max-width:768px){
+    .General_Form_Container{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        margin: 0px;
+    }
+    .formImg{
+    width:100%;
+}
+
+.formContainer{
+    margin: 10px;
+}
+.formImg{
+    width:100%;
+    height: 300px;
+}
+.form_top_text{
+    font-size: 2.5rem;
+}
+
+.formP{
+    margin-top:10px; 
+}
+.input{
+    padding: 10px;
+    outline: none;
+    width: 90%;
+    border: .5px black solid;
+}
+.inputDiv{
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+.chckDiv{
+    display: flex;
+    justify-content: space-between;
+}
+.forgot{
+    margin-top: 15px;
+    color:  #FE4C55;
+    text-transform: capitalize;
+}
+.LogBTn{
+    width:100%;
+    background-color: #FE4C55;
+    color: white;
+    border: none;
+    outline: none;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+}

@@ -1,0 +1,95 @@
+.main {
+    width: 15vw;
+    /* transform: translateX(-3em); */
+    /* border-right: 1px solid black; */
+    box-shadow: 1px 0px 1px 0px gray;
+    background-color: white;
+    height: 92vh;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.main2 {
+    height: 80vh;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.linkscontainer,
+.mains {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    width: 15vw;
+}
+
+.linkscontainer {
+    margin-top: 1em;
+}
+
+.button {
+    background-color: red;
+    border-radius: 15px;
+    height: 3em;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.link {
+    height: 3em;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    gap: 0.5em;
+}
+
+.activeLink {
+    height: 3em;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    gap: 0.5em;
+    color: red;
+    border-left: 3px solid red;
+}
+
+.images {
+    background-color: gray;
+    border-radius: 15px;
+    height: 4em;
+    width: 12vw;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.images img {
+    width: 2em;
+    height: 2em;
+    border-radius: 5px;
+    background: black;
+}
+
+.im p {
+    font-size: 0.7em;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
