@@ -10,9 +10,11 @@
     align-items: center;
     background: rgb(228, 221, 221);
 }
-.error{
+
+.error {
     color: red;
 }
+
 .aside {
     width: 35vw;
     height: 80vh;
