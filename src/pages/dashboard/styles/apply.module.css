@@ -1,0 +1,51 @@
+.inputdiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.myProgress {
+    width: 100%;
+    background-color: grey;
+}
+
+.myBar {
+    width: 20%;
+    height: 30px;
+    background-color: red;
+}
+
+.input {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+.butcon {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.button1 {
+    margin-top: 2em;
+    background-color: red;
+    color: white;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    border-radius: 10px;
+}
+
+.button {
+    border: 2px solid red;
+    color: red;
+    font-weight: 600;
+    height: 3em;
+    border-radius: 10px;
+}
+
+.link {
+    color: red;
+}

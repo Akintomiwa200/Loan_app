@@ -1,0 +1,60 @@
+.main {
+    width: 80vw;
+}
+
+.sam {
+    width: 72vw;
+}
+
+.add {
+    width: 15vw;
+    border-radius: 10px;
+    border: 2px solid red;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: red;
+    gap: 1em;
+}
+
+.sam2 {
+    display: flex;
+    gap: 2em;
+}
+
+.button1 {
+    margin-top: 2em;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    height: 3em;
+}
+
+.buttonspace {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 72vw;
+}
+
+.tf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-size: 2em;
+    height: 2em;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 72vw;
+}
+
+.inputs input[type="text"] {
+    width: 72vw;
+    height: 3em;
+}

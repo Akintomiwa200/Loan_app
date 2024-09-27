@@ -1,14 +1,11 @@
-body {
-    overflow: hidden;
-}
-
 .main {
     display: flex;
     flex-direction: column;
-    height: 100vw;
-        background-color: aliceblue;
     overflow: hidden;
+    height: 100vh;
+    background-color: aliceblue;
 }
+
 
 .split {
     display: flex;
@@ -16,7 +13,7 @@ body {
     align-items: center; */
     width: 100vw;
     background-color: aliceblue;
-    /* gap: 2em; */
+    gap: 2em;
 }
 
 .outlet {
@@ -48,10 +45,40 @@ body {
     justify-content: center;
     align-items: center;
     box-shadow: 1px 0px 1px 0px gray;
-    transform: translateX(14em);
-    /* transform: translateY(3em); */
+    transform: translateX(13.5em);
 }
 
 .opeenn {
     font-size: 2em;
+}
+
+
+@media only screen and (max-width:500px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        min-height: auto;
+        background-color: aliceblue;
+    }
+
+    .split {
+        display: flex;
+        flex-direction: column-reverse;
+        height: auto;
+    }
+
+    .open,
+    .close {
+        display: none;
+    }
+
+    .outlet {
+        width: 100vw;
+        display: flex;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+    }
 }

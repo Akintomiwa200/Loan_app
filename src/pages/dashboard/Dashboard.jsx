@@ -6,10 +6,11 @@ import { RiSignalWifi1Fill } from 'react-icons/ri'
 import { MdArrowCircleRight, MdElectricBolt } from 'react-icons/md'
 import Pagnation from '../../components/dashboardtools/pagnation/Pagnation'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 
 const Dashboard = () => {
-
+    const navigate = useNavigate()
     const [currectPage, setCurrentPage] = useState(1);
     const totalPages = 10;
 
@@ -19,6 +20,10 @@ const Dashboard = () => {
 
     const handleCliek = () => {
         alert('the button has been clicked')
+    }
+    const handleCliekHistory = () => {
+        // alert('the button has been clicked')
+        navigate("/dashboard/history")
     }
 
     return (
@@ -56,7 +61,7 @@ const Dashboard = () => {
                         <h2>Transactions</h2>
                         <p>See Reciept for al Transaction</p>
                     </div>
-                    <h1 className={styles.blunt} onClick={handleCliek}>See All Transactions <MdArrowCircleRight /> </h1>
+                    <h1 className={styles.blunt} onClick={handleCliekHistory}>See All Transactions <MdArrowCircleRight /> </h1>
                 </div>
                 <div>
                     <Pagnation

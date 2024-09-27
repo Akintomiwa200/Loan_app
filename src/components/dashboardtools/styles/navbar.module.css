@@ -39,6 +39,10 @@
 
 }
 
+.profile {
+    cursor: pointer;
+}
+
 .im {
     display: flex;
     flex-direction: column;
@@ -57,4 +61,17 @@
     height: 2em;
     border-radius: 5px;
     background: black;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .maini {
+        width: 100vw;
+        height: 10vh;
+    }
+
+    .title {
+        display: none;
+    }
 }

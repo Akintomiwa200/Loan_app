@@ -1,0 +1,73 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(240, 234, 234);
+}
+
+.card {
+    width: 30vw;
+    box-shadow: 0.5px 0.5px 1px 1px grey;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 15px;
+}
+
+.button,
+.button1,
+input {
+    width: 26vw;
+    margin: 0.5em 0;
+    height: 3em;
+    border-radius: 10px;
+    font-size: 1.1em;
+}
+
+.button1 {
+    margin-top: 2em;
+    background-color: red;
+    color: white;
+}
+
+.button {
+    border: 2px solid red;
+    color: red;
+    font-weight: 600;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.in,
+.inn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.in {
+    height: 5em;
+    width: 5em;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.116);
+}
+
+.inn {
+    height: 4em;
+    width: 4em;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.24);
+}
+
+.keyss {
+    color: red;
+}

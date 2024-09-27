@@ -1,0 +1,81 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(243, 239, 239);
+    align-items: center;
+    justify-content: center;
+}
+
+.outlet {
+    display: flex;
+    padding: 1em;
+    flex-direction: column;
+    width: 25vw;
+    height: 55vh;
+    background: white;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0.5px 0px 0.5px 0.5px gray;
+}
+
+.express {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6em;
+    height: 6em;
+    background: rgb(34, 224, 34);
+    border-radius: 50%;
+}
+
+.cry2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5em;
+    height: 5em;
+    background: rgb(96, 233, 96);
+    border-radius: 50%;
+}
+
+.cry3 {
+    font-size: 3em;
+}
+
+.buttonspace {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    gap: 1em;
+}
+
+.button1 {
+    margin-top: 2em;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    height: 3em;
+}
+
+/* a {
+    color: red;
+} */
+
+.button {
+    border: 2px solid red;
+    color: red;
+    height: 3em;
+    border-radius: 10px;
+    font-weight: 600;
+}

@@ -1,21 +1,26 @@
-.Footer{
+.Footer {
     background: #24282C;
-   
-     padding: 100px;
-    
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 100px;
+
 }
-.footer_Button_div{
+
+.footerButtonDiv {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 30px;
 }
-.inner-red-div{
+
+.innerRedDiv {
     background: #FE4C55;
     padding: 70px;
     border-radius: 20px;
 }
-.Get{
+
+.Get {
     font-size: 2rem;
     font-weight: bolder;
     text-transform: capitalize;
@@ -23,11 +28,13 @@
     text-align: center;
     padding: 20px;
 }
-.red_P{
+
+.redP {
     text-align: center;
 }
-.footerBtn{
-    border:  thin black  1.5px ;
+
+.footerBtn {
+    border: solid black 1.5px;
     outline: none;
     padding: 9px;
     background-color: transparent;
@@ -38,57 +45,73 @@
     width: 170px;
     font-weight: bolder;
 }
-.footerBtn:Hover{
+
+.footerBtn:Hover {
     background-color: black;
     color: white;
 
 }
-.inner_footer_div{
+
+.innerfooterdiv {
     display: flex;
     justify-content: space-evenly;
     margin-top: 80px;
 }
-.footer_top_text{
+
+.footerTopText {
     margin: 10px;
     color: #FE4C55;
     font-size: 1.3rem;
     font-weight: bolder;
     text-transform: capitalize;
 }
-.footer_downText{
+
+.footerDownText {
     margin: 10px;
     color: white;
     text-transform: capitalize;
 }
-.spn_FT{
+
+.innerFooterDiv {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.spnFT {
     display: block;
 }
-.downFT{
+
+.downFT {
     margin-top: 20px;
     color: white;
 }
-.App{
+
+.App {
     margin-top: 30px;
 }
-@media  only screen and (max-width:768px) {
-    .Footer{
+
+@media only screen and (max-width:768px) {
+    .Footer {
         background: #24282C;
-         padding: 30px;
-         text-align: center;
+        padding: 30px;
+        text-align: center;
     }
-    .footer_Button_div{
+
+    .footerButtondiv {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-top: 30px;
         flex-wrap: wrap;
     }
-    .inner-red-div{
+
+    .inner-red-div {
         background: #FE4C55;
         padding: 20px;
         border-radius: 20px;
     }
-    .Get{
+
+    .Get {
         font-size: 2rem;
         font-weight: bolder;
         text-transform: capitalize;
@@ -96,11 +119,13 @@
         text-align: center;
         padding: 20px;
     }
-    .red_P{
+
+    .red_P {
         text-align: center;
     }
-    .footerBtn{
-        border:  thin black  1.5px ;
+
+    .footerBtn {
+        border: thin black 1.5px;
         outline: none;
         padding: 9px;
         background-color: transparent;
@@ -111,37 +136,44 @@
         width: 100%;
         font-weight: bolder;
     }
-    .footerBtn:Hover{
+
+    .footerBtn:Hover {
         background-color: black;
         color: white;
-    
+
     }
-    .inner_footer_div{
+
+    .innerFooterDiv {
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap-reverse;
         margin-top: 80px;
     }
-    .footer_top_text{
+
+    .footerTopText {
         margin: 10px;
         color: #FE4C55;
         font-size: 1.3rem;
         font-weight: bolder;
         text-transform: capitalize;
     }
-    .footer_downText{
+
+    .footerDownText {
         margin: 10px;
         color: white;
         text-transform: capitalize;
     }
-    .spn_FT{
+
+    .spnssFT {
         display: block;
     }
-    .downFT{
+
+    .downFT {
         margin-top: 20px;
         color: white;
     }
-    .App{
+
+    .App {
         margin-top: 30px;
     }
 }

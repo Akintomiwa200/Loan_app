@@ -5,22 +5,45 @@ import Profile from './pages/dashboard/Profile'
 import Account from './pages/dashboard/Account'
 import Loan from './pages/dashboard/Loan'
 import Branches from './pages/dashboard/Branches'
-import Home from "./pages/Home"
-import Login from "./pages/login/Login"
-import SignUp from './pages/signup/Signup'
+import HomePage from "./pages/HomePage"
+import SignUp from './pages/signup/SignUp'
 import Upload from './pages/upload/Upload'
-
+import Transfer from './pages/dashboard/Transfer'
+import LogIn from './pages/login/LogIn'
+import Pin from './pages/pin/Pin'
+import Forget from './pages/forgetpassword/Forget'
+import OtpVerify from './pages/otpverify/OtpVerify'
+import ApplicationoSummary from './pages/dashboard/ApplicationSummary'
+import Decline from './pages/decline/Decline'
+import Success from './pages/success/Success'
+import PaymentLayout from './layout/PaymentLayout'
+import Withdrawal from './pages/dashboard/Withdrawal'
+import LoanLayout from './layout/LoanLayout'
+import ApplyForLoan from './pages/dashboard/ApplyForLoan'
+import CalculateLoan from './pages/dashboard/CalculateLoan'
+import UploadDocumentLoan from './pages/dashboard/UploadDocumentLoan'
+import PayLoan from './pages/dashboard/PayLoan'
+import TransactionHistory from './pages/dashboard/TransactionHistory'
 
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Home />
+        element: <HomePage />
     },
     {
-        path: '/Login',
-        element: < Login />
+        path: '/login',
+        element: <LogIn />
     },
+    {
+        path: "/forget",
+        element: <Forget />
+    },
+    {
+        path: '/pin',
+        element: <Pin />
+    }
+    ,
     {
         path: '/SignUp',
         element: < SignUp />
@@ -28,6 +51,23 @@ const router = createBrowserRouter([
     {
         path: '/Upload',
         element: < Upload />
+    },
+    {
+        path: '/decline',
+        element: < Decline />
+    },
+    {
+        path: '/success',
+        element: < Success />
+    }
+    ,
+    {
+        path: '/otp',
+        element: < OtpVerify />
+    },
+    {
+        path: '/application',
+        element: < ApplicationoSummary />
     },
     {
         path: "/dashboard",
@@ -45,13 +85,56 @@ const router = createBrowserRouter([
                 path: "/dashboard/account",
                 element: <Account />
             },
+
             {
-                path: "/dashboard/loan",
+                path: '/dashboard/loan',
                 element: <Loan />
+            },
+            {
+                path: '/dashboard/history',
+                element: <TransactionHistory/>
+            },
+
+            {
+                path: "/dashboard/loan/s",
+                element: <LoanLayout />,
+                children: [
+                    {
+                        index: true,
+                        element: <PayLoan />
+                    },
+                    {
+                        path: '/dashboard/loan/s/apply',
+                        element: <ApplyForLoan />
+                    },
+                    {
+                        path: '/dashboard/loan/s/calculate',
+                        element: <CalculateLoan />
+                    },
+                    {
+                        path: '/dashboard/loan/s/upload',
+                        element: <UploadDocumentLoan />
+                    }
+
+                ]
             },
             {
                 path: "/dashboard/branches",
                 element: <Branches />
+            },
+            {
+                path: "/dashboard/transfer",
+                element: <PaymentLayout />,
+                children: [
+                    {
+                        index: true,
+                        element: <Transfer />
+                    },
+                    {
+                        path: '/dashboard/transfer/withdraw',
+                        element: <Withdrawal />
+                    }
+                ]
             }
         ]
     }

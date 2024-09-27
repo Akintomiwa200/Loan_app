@@ -1,0 +1,60 @@
+.table, .table2 {
+    background: white;
+    padding: 4px 2em;
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0;
+    border-radius: 20px;
+    height: 14vh;
+}
+.table2{
+    height: 10vh;
+}
+.table h1,
+.table1 h1, .table2 h1 {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+    font-weight: 800;
+}
+
+.table h4,
+.table1 h3 {
+    font-weight: 100;
+}
+
+.table p {
+    margin: 0;
+    padding: 0;
+}
+
+.table1 {
+    background: white;
+    padding: 1em 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin: 1em 0;
+    border-radius: 20px;
+    border: 2px solid red;
+}
+
+.split {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.range {
+    width: 72vw;
+    margin: 0;
+    padding: 0;
+}
+
+.button1 {
+    background-color: red;
+    color: white;
+    height: 3em;
+    border-radius: 10px;
+    width: 100%;
+}

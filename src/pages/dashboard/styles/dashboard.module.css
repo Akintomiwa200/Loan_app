@@ -1,10 +1,3 @@
-body {
-    margin: 0;
-    padding: 0;
-    line-height: 0;
-}
-
-
 .main {
     width: auto;
     display: flex;
@@ -67,6 +60,12 @@ body {
     border-bottom: 2px solid red;
 }
 
+button {
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+
 .content {
     background: white;
     display: flex;
@@ -109,4 +108,27 @@ body {
 
 .blunt {
     font-size: 1.3em;
+}
+
+@media only screen and (max-width: 500px) {
+    .main {
+        height: auto;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bigcard,
+    .list,
+    .big {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+
 }

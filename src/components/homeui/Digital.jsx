@@ -1,7 +1,7 @@
 import styles from "./Digital.module.css"; // Import modular CSS
 import Tree from "../../assets/Tree.png";
 import Key from "../../assets/key.png";
-import Man from "../../assets/man.png";
+import Man from "../../assets/Man.png";
 import Thumb from "../../assets/Thumb.png";
 
 const Digital = () => {

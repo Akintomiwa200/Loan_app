@@ -1,20 +1,31 @@
 import styles from './styles/branches.module.css'
+
+
 const Branches = () => {
 
 
-    function encode(data) {
-        return Object.keys(data)
-            .map(
-                (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-            )
-            .join("&");
+    const handleCliek = () => {
+        alert('the button has been clicked')
     }
 
+
     return (
-        <div>
+        <div className={styles.main}>
+            <div className={styles.branch}>
+                <h2>branches</h2>
+                <div
+                    className={styles.list}>
+                    <div onClick={handleCliek} className={styles.link}>Ba&apos;iya-oje, ile Ewe</div>
+                    <div onClick={handleCliek} className={styles.link}>Ba&apos;iya-oje, ile Ewe</div>
+                    <div onClick={handleCliek} className={styles.link}>Ba&apos;iya-oje, ile Ewe</div>
+                    <div onClick={handleCliek} className={styles.link}>Ba&apos;iya-oje, ile Ewe</div>
+                    <div onClick={handleCliek} className={styles.link}>Ba&apos;iya-oje, ile Ewe</div>
+                    <div onClick={handleCliek} className={styles.link}>Ba&apos;iya-oje, ile Ewe</div>
+                </div>
+            </div>
             <iframe
                 width="250%"
-                height="400%"
+                height="450%"
                 title="map"
                 className={styles.map}
                 frameBorder={0}

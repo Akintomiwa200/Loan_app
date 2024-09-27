@@ -9,11 +9,11 @@ const BigCard = ({ title, mainValue, subValue, backgroundColor }) => {
             <div>
                 <div >
                     <h6 className={styles.tit}>BALANCE</h6>
-                    <h2 className={styles.tit2}>#<sapn>{mainValue}</sapn></h2>
+                    <h2 className={styles.tit2}>#<span>{mainValue}</span></h2>
                 </div>
                 <div>
                     <h6 className={styles.tit}>INTEREST</h6>
-                    <h2 className={styles.tit2}><sapn>{subValue}</sapn>%</h2>
+                    <h2 className={styles.tit2}><span>{subValue}</span>%</h2>
                 </div>
             </div>
             <div>
@@ -31,8 +31,8 @@ BigCard.propTypes = {
     title: PropTypes.string.isRequired,
     mainValue: PropTypes.string.isRequired,
     subValue: PropTypes.string.isRequired,
-    SubText: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
+    SubText: PropTypes.string,
+    type: PropTypes.string,
     backgroundColor: PropTypes.string
 };
 
