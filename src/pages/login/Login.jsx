@@ -1,16 +1,14 @@
 
 import { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
-// import { getAuth, signInWithEmailAndPassword } from "firebase/auth"; // Firebase Auth methods
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth"; // Firebase Auth methods
 import House from "../../assets/House.png";
-// import Header from "../../components/homeui/Header";
-// import Footer from "../../components/homeui/Footer";
 import { FaArrowRight } from "react-icons/fa6";
 import styles from "./Login.module.css"; // Import modular CSS
 
 const Login = () => {
   const navigate = useNavigate();
-  // const auth = getAuth(); // Initialize Firebase Auth
+  const auth = getAuth(); // Initialize Firebase Auth
 
   // State for form input
   const [email, setEmail] = useState("");
@@ -42,13 +40,13 @@ const Login = () => {
     if (validateForm()) {
       try {
         // Sign in with Firebase Auth
-        // const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        // const user = userCredential.user;
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
 
         // Redirect to dashboard after successful login
-        // if (user) {
-        //   navigate("/dashboard");
-        // }
+        if (user) {
+          navigate("/dashboard");
+        }
       } catch (error) {
         // Handle login errors
         if (error.code === "auth/user-not-found") {
@@ -68,7 +66,6 @@ const Login = () => {
 
   return (
     <div className={styles.sigN}>
-      {/* <Header /> */}
       <div className={styles.generalFormContainer}>
         <img src={House} alt="" className={styles.formImg} />
         <div className={styles.formContainer}>
@@ -114,7 +111,6 @@ const Login = () => {
           </form>
         </div>
       </div>
-      {/* <Footer /> */}
     </div>
   );
 };
