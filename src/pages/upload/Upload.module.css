@@ -23,6 +23,17 @@
     color: white;
 }
 
+.myProgress {
+    width: 100%;
+    background-color: grey;
+}
+
+.myBar {
+    width: 1%;
+    height: 30px;
+    background-color: green;
+}
+
 .topText {
     font-size: 2.5rem;
 }
