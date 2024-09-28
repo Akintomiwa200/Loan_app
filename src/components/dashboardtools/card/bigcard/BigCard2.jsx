@@ -3,7 +3,7 @@ import styles from './bigcard.module.css'
 
 
 
-const BigCard2 = ({ title, mainValue, subValue, backgroundColor }) => {
+const BigCard2 = ({ title, mainValue, subValue, backgroundColor, onClick }) => {
     return (
         <div className={styles.main} style={{ backgroundColor }}>
             <div>
@@ -33,7 +33,8 @@ BigCard2.propTypes = {
     subValue: PropTypes.string.isRequired,
     SubText: PropTypes.string,
     type: PropTypes.string,
-    backgroundColor: PropTypes.string
+    backgroundColor: PropTypes.string,
+    onClick: PropTypes.func
 };
 
 // BigCard.defaultProps = {
