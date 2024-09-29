@@ -7,7 +7,11 @@ const ApplyForLoan = () => {
     const navigate = useNavigate()
 
     const handleNext = () => {
-        navigate("/dashboard/loan/s/calculate")
+        navigate("/dashboard/loan/s/repay")
+    }
+
+    const handlePrev = () => {
+        navigate("/dashboard/loan/s/contact")
     }
 
     return (
@@ -28,7 +32,7 @@ const ApplyForLoan = () => {
             </div>
             <div className={styles.butcon}>
                 <button className={styles.button1} onClick={handleNext}>Agree To Terms & Conditions <FaRightLong /></button>
-                <button className={styles.button}>Go Back To Contact Details</button>
+                <button className={styles.button} onClick={handlePrev}>Go Back To Contact Details</button>
                 <p>Not sure What Loan You apply for <Link to='/dashboard/branches' className={styles.link}>Contact Your Branch</Link></p>
             </div>
         </div>

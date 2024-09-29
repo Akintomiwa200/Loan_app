@@ -34,7 +34,7 @@ const Hero = () => {
   })
 
   return (
-    <div>
+    <div className={styles.main}>
       <div className={styles.hero_Display_Container}>
         <div className={styles.hero_Text_Box}
         // data-aos="fade-right"

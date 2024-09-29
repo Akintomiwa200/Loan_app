@@ -12,7 +12,7 @@ const Loan = () => {
     }
 
     const clickApply = () => {
-        navigate("/dashboard/loan/s/apply")
+        navigate("/dashboard/loan/s/contact")
     }
 
     const clickCalculate = () => {

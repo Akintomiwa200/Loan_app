@@ -17,3 +17,7 @@ button {
   box-shadow: none;
   cursor: pointer;
 }
+
+input {
+  border: 0.5px solid gray;
+}

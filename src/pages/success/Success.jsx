@@ -4,6 +4,7 @@ import { IoMdHappy } from 'react-icons/io'
 
 
 const Success = () => {
+
     return (
         <div className={styles.main}>
             <div className={styles.outlet}>
@@ -13,12 +14,12 @@ const Success = () => {
                             <IoMdHappy className={styles.cry3} />
                         </span>
                     </span>
-                    <h2>Payent Declined</h2>
-                    <h3>Your Payment was not Successful</h3>
+                    <h2>Payent Succesful</h2>
+                    <h3>Your Payment was Successful</h3>
                 </div>
                 <div className={styles.buttonspace}>
                     <h5>Go back to <Link to='/dashboard'>Dashboard</Link> </h5>
-                    <button className={styles.button1}>See Receipt</button>
+                    <button className={styles.button1}><Link to='/application'> See Receipt</Link></button>
                     <button className={styles.button}>Cancel</button>
                 </div>
             </div>

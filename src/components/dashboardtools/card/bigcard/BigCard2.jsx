@@ -3,7 +3,7 @@ import styles from './bigcard.module.css'
 
 
 
-const BigCard2 = ({ title, mainValue, subValue, backgroundColor, onClick }) => {
+const BigCard2 = ({ title, mainValue, subValue, backgroundColor }) => {
     return (
         <div className={styles.main} style={{ backgroundColor }}>
             <div>

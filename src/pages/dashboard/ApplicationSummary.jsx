@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from './styles/applicationsummary.module.css'
 
 const ApplicationoSummary = () => {
@@ -42,7 +43,7 @@ const ApplicationoSummary = () => {
                 </div>
                 <div className={styles.buttonspace}>
                     <button className={styles.button1}>Print Reciept</button>
-                    <button className={styles.button}>Go Back To DashBoard</button>
+                    <button className={styles.button}  > <Link to='/dashboard'>Go Back To DashBoard</Link></button>
                 </div>
             </div>
         </div>

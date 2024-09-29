@@ -1,6 +1,15 @@
-.inputdiv {
+.main {
     display: flex;
     flex-direction: column;
+}
+
+
+.inputdiv {
+    display: flex;
+    margin: 0.5em 0;
+    flex-direction: column;
+    color: gray;
+    width: 73.5vw;
 }
 
 .myProgress {
@@ -12,16 +21,18 @@
 .myBar {
     width: 20%;
     height: 30px;
-    background-color: red;
     border-radius: 1em;
+    background-color: red;
 }
 
 .input {
     width: 100%;
+    padding-left: 1em;
     border: 1px solid gray;
 }
 
 .butcon {
+    margin-top: 2em;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -29,14 +40,12 @@
 }
 
 .button1 {
-    margin-top: 2em;
     background-color: red;
     color: white;
     height: 3em;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1em;
     border-radius: 10px;
 }
 
@@ -50,22 +59,4 @@
 
 .link {
     color: red;
-}
-
-.glow {
-    width: 68vw;
-    display: flex;
-    flex-direction: column;
-    padding: 2em;
-    background-color: white;
-    height: 10vh;
-    margin: 1.5em 0;
-    padding-right: 5em;
-    text-align: justify;
-    border-radius: 1em;
-    font-size: 1.2em;
-    text-transform: capitalize;
-}
-.glow h4{
-    font-weight: 100;
 }

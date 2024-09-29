@@ -38,6 +38,9 @@ input[type=password],
 input[type=email] {
   height: 2em;
   font-size: 1em;
+  border: 0.5px solid gray;
+  outline: none;
+  padding-left: 1em;
 }
 
 input[type=checkbox] {

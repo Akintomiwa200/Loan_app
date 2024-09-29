@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { FaStar, FaFileUpload } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import styles from "./SignUp.module.css";
-import app from "../../utils/firebase";  // Ensure the path to your Firebase config is correct
+import firebase from "../../utils/firebase";  // Ensure the path to your Firebase config is correct
 
 const SignUp = () => {
+  const { auth } = firebase;
   const navigate = useNavigate();
-  const auth = getAuth(app);  // Correct Firebase app initialization
+  // const auth = getAuth(app);  // Correct Firebase app initialization
 
   // State for form input and error handling
   const [email, setEmail] = useState("");

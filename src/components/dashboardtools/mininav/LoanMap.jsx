@@ -17,7 +17,7 @@ const LoanMap = () => {
                         Pay Loan
                     </NavLink>
                     <NavLink
-                        className={locate.pathname === '/dashboard/loan/s/apply' ? styles.activeLink : styles.link} to='/dashboard/loan/s/apply'>
+                        className={locate.pathname === '/dashboard/loan/s/contact' ? styles.activeLink : styles.link} to='/dashboard/loan/s/contact'>
                         Apply For Loan
                     </NavLink>
                     <NavLink
