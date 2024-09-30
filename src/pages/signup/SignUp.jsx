@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { FaStar, FaFileUpload } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import styles from "./SignUp.module.css";
+import styles from "./SignUP.module.css";
 import firebase from "../../utils/firebase";  // Ensure the path to your Firebase config is correct
 
 const SignUp = () => {
