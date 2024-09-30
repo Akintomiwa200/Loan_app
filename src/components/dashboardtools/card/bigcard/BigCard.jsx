@@ -28,9 +28,9 @@ const BigCard = ({ title, mainValue, subValue, backgroundColor }) => {
 }
 
 BigCard.propTypes = {
-    title: PropTypes.string.isRequired,
-    mainValue: PropTypes.string.isRequired,
-    subValue: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    mainValue: PropTypes.string,
+    subValue: PropTypes.string,
     SubText: PropTypes.string,
     type: PropTypes.string,
     backgroundColor: PropTypes.string,
