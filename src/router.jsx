@@ -9,7 +9,7 @@ import HomePage from "./pages/HomePage"
 import SignUp from './pages/signup/SignUp'
 import Upload from './pages/upload/Upload'
 import Transfer from './pages/dashboard/Transfer'
-import LogIn from './pages/login/LogIn'
+import Login from './pages/login/Login'
 import Pin from './pages/pin/Pin'
 import Forget from './pages/forgetpassword/Forget'
 import OtpVerify from './pages/otpverify/OtpVerify'
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/login',
-        element: <LogIn />
+        element: <Login />
     },
     {
         path: "/forget",
