@@ -6,7 +6,7 @@ import House from "../../assets/House.png";
 import { FaArrowRight } from "react-icons/fa6";
 import styles from "./Login.module.css"; // Import modular CSS
 
-const Login = () => {
+const LogIn = () => {
   const navigate = useNavigate();
   const auth = getAuth(); // Initialize Firebase Auth
 
@@ -115,4 +115,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LogIn;
