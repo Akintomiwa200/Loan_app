@@ -57,8 +57,8 @@
     .main {
         display: flex;
         flex-direction: column;
-        overflow-x: hidden;
-        min-height: auto;
+        overflow: auto;
+        min-height: 100vh;
         background-color: aliceblue;
     }
 

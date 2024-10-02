@@ -66,9 +66,14 @@
 
 
 @media only screen and (max-width: 500px) {
-    .maini {
+    .main {
         width: 100vw;
         height: 10vh;
+        position: fixed;
+        z-index: 100;
+        /* position: absolute; */
+        top: 0;
+        margin-bottom: 6em;
     }
 
     .title {

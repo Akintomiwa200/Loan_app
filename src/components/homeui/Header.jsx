@@ -12,7 +12,7 @@ const Header = () => {
   };
 
   return (
-    <div>
+    <div className={styles.main}>
       <div className={styles.header}>
         <Link to='/'>
           <img src={Logo} alt="" />

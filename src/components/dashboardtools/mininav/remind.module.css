@@ -18,3 +18,31 @@
     padding: 0 1em;
     color: red;
 }
+
+@media only screen and (max-width: 768px) {
+    .main2 {
+        margin: 2em 0;
+        width: 95vw;
+        height: 3em;
+        display: flex;
+        align-items: center;
+        background: white;
+    }
+
+    .linkscontainer {
+        margin-left: 5px;
+        display: flex;
+        gap: 0.5em;
+    }
+
+    .link,
+    .activeLink {
+        font-size: 0.7em;
+    }
+
+    .activeLink {
+        border-left: 2px solid red;
+        padding: 0 0.5em;
+        color: red;
+    }
+}

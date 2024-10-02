@@ -86,19 +86,27 @@
 }
 
 @media only screen and (max-width:768px) {
-    .flex-services {
+    .digitalContainer {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    .flexServices {
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
     }
 
-    .inner_Digital_Container {
+    .innerDigitalContainer {
         background-color: #F2F2F2;
         margin: 0px;
     }
 
-    .dig_Top_text {
+    .digTopText {
         text-align: center;
         text-transform: capitalize;
         font-size: 2rem;
@@ -106,41 +114,44 @@
         padding: 30px;
     }
 
-    .Dig_P {
+    .DigP {
         font-size: 16px;
         font-weight: 400;
         line-height: 19.68px;
         text-align: center;
+        width: 90vw;
     }
 
     .services {
         margin: 20px;
     }
 
-    .box_services_1 {
+    .boxServices1 {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        align-items: center;
         margin-top: 30px;
     }
 
-    .inner_Box_Services {
+    .innerBoxServices {
         margin-top: 50px;
         width: 100%;
+        margin: auto;
     }
 
     .digImg {
         width: 100%;
     }
 
-    .top_Text_Serv {
+    .topTextServ {
         text-transform: capitalize;
-        font-size: 2 rem;
+        font-size: 2rem;
         font-weight: bolder;
         padding: 20px;
     }
 
-    .down_Text_Services {
+    .downTextServices {
         padding: 20px;
     }
 
@@ -151,29 +162,32 @@
         font-weight: normal;
         text-align: center;
         width: 100%;
-
+        margin: 0;
     }
 
-    .box_services_2 {
+    .boxServices2 {
         display: flex;
         justify-content: space-between;
-        flex-direction: row-reverse;
+        flex-direction: column;
         flex-wrap: wrap;
+        align-items: center;
         margin: 20px;
     }
 
-    .box_services_3 {
+    .boxServices3 {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        align-items: center;
         margin: 20px;
     }
 
-    .box_services_4 {
+    .boxServices4 {
         display: flex;
         justify-content: space-between;
-        flex-direction: row-reverse;
+        flex-direction: column;
         flex-wrap: wrap;
+        align-items: center;
         margin: 20px;
     }
 }

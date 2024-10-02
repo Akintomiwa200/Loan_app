@@ -185,6 +185,10 @@
         flex-wrap: wrap;
     }
 
+    .sigN {
+        height: auto;
+    }
+
     .aside {
         width: 100%;
         background-image: url("../../assets//BG.png");
@@ -192,6 +196,7 @@
         background-position: center;
         background-size: cover;
         padding: 10px;
+        height: 40vh;
     }
 
     .top_text {

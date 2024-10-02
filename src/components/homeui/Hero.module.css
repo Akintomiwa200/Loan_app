@@ -73,12 +73,22 @@
 }
 
 @media only screen and (max-width:768px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+    }
+
     .hero_Display_Container {
         display: flex;
         justify-content: space-evenly;
         margin-top: 0px;
         flex-wrap: wrap;
         text-align: center;
+        width: 90vw;
     }
 
     .heroText {
@@ -89,6 +99,7 @@
 
     .hero_Text_Box {
         margin-top: 10px;
+        width: 85vw;
     }
 
     .heroImg {
@@ -108,7 +119,7 @@
     }
 
     .hero_Btn {
-        width: 100%;
+        width: 80vw;
         border: none;
         outline: none;
         margin: 5px;
@@ -123,7 +134,7 @@
     }
 
     .Hero-Button-Container {
-        margin: 20px;
+        width: 80vw;
         display: block;
     }
 
@@ -141,7 +152,8 @@
 
     .box1 {
         margin: 10px;
-        width: 100%;
+        width: 70vw;
+        text-align: center;
     }
 
     .top_Text {

@@ -98,16 +98,18 @@ a {
 @media only screen and (max-width: 500px) {
     .main {
         bottom: 0;
-        position: sticky;
+        position: fixed;
         display: flex;
         margin: 0;
         padding: 0;
         height: 10vh;
         width: 100vw;
         transform: translateX(0em);
+        position: absolute;
     }
 
-    .link {
+    .link,
+    .button {
         height: 3em;
         width: 15vw;
         margin: auto;
@@ -118,6 +120,11 @@ a {
         flex-direction: column;
         font-size: 0.7em;
         align-items: center;
+    }
+
+    .button {
+        background-color: transparent;
+        color: black;
     }
 
     .activeLink {

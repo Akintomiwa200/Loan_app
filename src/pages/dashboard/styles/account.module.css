@@ -69,3 +69,82 @@
 .blunt {
     font-size: 1.3em;
 }
+
+
+
+@media only screen and (max-width:768px) {
+    .main {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bigcard {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        justify-content: center;
+        width: 100vw;
+        margin-bottom: 2em;
+    }
+
+    .good {
+        font-weight: 550;
+        font-size: 2em;
+    }
+
+    .big {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        height: auto;
+        width: 100vw;
+    }
+
+    .content {
+        background: white;
+        display: flex;
+        flex-direction: column;
+        height: 40vh;
+        width: 72vw;
+        border-radius: 10px;
+        align-items: center;
+        margin: auto;
+        justify-content: space-between;
+    }
+
+    .list2 {
+        display: flex;
+        width: 65vw;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0.5em 0;
+        height: 7vh;
+    }
+
+    .list2 h2 {
+        font-weight: 600;
+        font-size: 1.3em;
+    }
+
+    .list2 p {
+        color: gray;
+    }
+
+    .list2 h1 {
+        display: flex;
+        gap: 0.5em;
+        align-items: center;
+        cursor: pointer;
+        color: red;
+        padding-bottom: 0.5em;
+        border-bottom: 2px solid red;
+    }
+
+    .blunt {
+        font-size: 1.3em;
+    }
+}

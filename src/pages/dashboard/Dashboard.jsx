@@ -63,7 +63,7 @@ const Dashboard = () => {
                     </div>
                     <h1 className={styles.blunt} onClick={handleCliekHistory}>See All Transactions <MdArrowCircleRight /> </h1>
                 </div>
-                <div>
+                <div className={styles.page}>
                     <Pagnation
                         currectPage={currectPage}
                         totalPages={totalPages}
