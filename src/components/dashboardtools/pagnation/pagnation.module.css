@@ -38,3 +38,22 @@
 .icons {
     font-size: 2em;
 }
+
+
+
+@media only screen and (max-width: 768px) {
+    .clicks {
+        width: 10vw;
+        font-size: 0.7em;
+        margin: 0 0.3em;
+    }
+
+    .pagnation {
+        width: 90vw;
+        margin-bottom: 5em;
+    }
+
+    .clicks h5 {
+        display: none;
+    }
+}

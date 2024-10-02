@@ -38,7 +38,7 @@ const Pagnation = ({ currectPage, totalPages, onPageChange }) => {
                     onClick={() => onPageChange(currectPage - 1)}
                 >
 
-                    <MdKeyboardArrowLeft className={styles.icons} /> Previous
+                    <MdKeyboardArrowLeft className={styles.icons} /> <h5>Previous</h5>
                 </button>
                 <div className={styles.num}>
                     {pageNumbers.map((page, index) => (
@@ -57,7 +57,7 @@ const Pagnation = ({ currectPage, totalPages, onPageChange }) => {
                     disabled={currectPage === totalPages}
                     onClick={() => onPageChange(currectPage + 1)}
                 >
-                    Next <MdKeyboardArrowRight className={styles.icons} />
+                    <h5>Next</h5>  <MdKeyboardArrowRight className={styles.icons} />
                 </button>
             </div>
         </div>
