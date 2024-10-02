@@ -85,3 +85,22 @@
 .keyss {
     color: red;
 }
+
+@media only screen and (max-width:768px) {
+    .card {
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button,
+    .button1 {
+        width: 70vw;
+    }
+
+    .input1{
+        width: 70vw;
+    }
+}

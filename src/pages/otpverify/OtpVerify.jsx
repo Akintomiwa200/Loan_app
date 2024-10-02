@@ -122,13 +122,13 @@ const OtpVerify = () => {
             ))}
           </div>
           {otpVerified && (
-            <div>
+            <div className={styles.form}>
               <input
                 type='password'
                 placeholder='Enter New Password'
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
-                className={styles.input}
+                className={styles.input1}
               />
               <button className={styles.button1}>Reset Password</button>
             </div>

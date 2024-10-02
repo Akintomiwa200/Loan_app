@@ -58,3 +58,21 @@
     border-radius: 10px;
     font-weight: 600;
 }
+
+@media only screen and (max-width:768px) {
+    .second {
+        width: 80vw;
+    }
+
+    .content {
+        width: 80vw;
+        height: 50vh;
+        gap: 1em;
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+    }
+    .content h2{
+        font-size: 1.2em;
+    }
+}

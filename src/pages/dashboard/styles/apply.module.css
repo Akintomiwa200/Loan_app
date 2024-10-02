@@ -66,6 +66,45 @@
     font-size: 1.2em;
     text-transform: capitalize;
 }
-.glow h4{
+
+.glow h4 {
     font-weight: 100;
+}
+
+@media only screen and (max-width:768px) {
+    .inputdiv {
+        width: 85vw;
+        margin: 0;
+    }
+
+    .main {
+        min-height: 80vh;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    .myProgress {
+        width: 90vw;
+    }
+
+    .glow {
+        width: 90vw;
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .glow p {
+        width: 80vw;
+        font-size: 0.7em;
+    }
+
+    .butcon {
+        width: 90vw;
+    }
 }
