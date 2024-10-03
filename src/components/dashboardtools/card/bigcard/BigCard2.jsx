@@ -9,11 +9,11 @@ const BigCard2 = ({ title, mainValue, subValue, backgroundColor }) => {
             <div>
                 <div >
                     <h6 className={styles.tit}>Name</h6>
-                    <h2 className={styles.tit2}>#<span>{mainValue}</span></h2>
+                    <h2 className={styles.tit2}>{mainValue}</h2>
                 </div>
                 <div>
                     <h6 className={styles.tit}>Account Number</h6>
-                    <h2 className={styles.tit2}><span>{subValue}</span>%</h2>
+                    <h2 className={styles.tit2}>{subValue}</h2>
                 </div>
             </div>
             <div>

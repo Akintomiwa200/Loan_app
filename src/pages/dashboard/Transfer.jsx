@@ -192,7 +192,6 @@
 
 // export default Transfer;
 
-
 import { useState, useEffect } from 'react';
 import { BiTransferAlt } from 'react-icons/bi';
 import BigCard from '../../components/dashboardtools/card/bigcard/BigCard';
@@ -201,19 +200,19 @@ import { FaPlus } from 'react-icons/fa';
 import styles from './styles/transfer.module.css';
 
 const Transfer = () => {
-    const [banks, setBanks] = useState([]);
-    const [bankCode, setBankCode] = useState('');
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [accountNumber, setAccountNumber] = useState('');
-    const [bankName, setBankName] = useState('');
-    const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
-    const [selectedBank, setSelectedBank] = useState(null);
+    const [banks, setBanks] = useState([]); // Holds validated bank accounts
+    const [bankCode, setBankCode] = useState(''); // Selected bank code
+    const [isModalOpen, setIsModalOpen] = useState(false); // Modal for adding bank
+    const [accountNumber, setAccountNumber] = useState(''); // Input for account number
+    const [bankName, setBankName] = useState(''); // Selected bank name
+    const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false); // Modal for bank details
+    const [selectedBank, setSelectedBank] = useState(null); // Holds selected bank for details
 
-    const [bankList, setBankList] = useState([]);
-    const [isLoadingBanks, setIsLoadingBanks] = useState(true);
+    const [bankList, setBankList] = useState([]); // List of banks fetched from the API
+    const [isLoadingBanks, setIsLoadingBanks] = useState(true); // Loading state for bank list
 
+    // Fetch the list of banks on component mount
     useEffect(() => {
-        // Fetch bank list from Paystack API
         const fetchBanks = async () => {
             try {
                 const response = await fetch('https://api.paystack.co/bank', {
@@ -239,12 +238,14 @@ const Transfer = () => {
         fetchBanks();
     }, []);
 
+    // Handle bank selection
     const handleBankChange = (selectedBankCode) => {
         const selectedBank = bankList.find(bank => bank.code === selectedBankCode);
         setBankCode(selectedBankCode);
         setBankName(selectedBank ? selectedBank.name : '');
     };
 
+    // Validate account number with the selected bank
     const validateAccount = async () => {
         if (!accountNumber || !bankCode) {
             alert('Please select a bank and enter an account number');
@@ -267,12 +268,13 @@ const Transfer = () => {
                 const newBank = {
                     bankName: data.data.bank_name,
                     accountNumber: data.data.account_number,
-                    accountName: data.data.account_name,
-                    balance: 'N/A', // Set balance if available
+                    accountName: data.data.account_name,  // Added account name for potential use
+                    balance: 'N/A', // Set balance or other available fields from API
                 };
 
-                setBanks([...banks, newBank]);
-                setIsModalOpen(false); // Close modal after adding
+                // Append the new validated bank details to the banks state
+                setBanks((prevBanks) => [...prevBanks, newBank]);
+                setIsModalOpen(false); // Close modal after successful addition
             } else {
                 alert('Account validation failed');
             }
@@ -307,20 +309,21 @@ const Transfer = () => {
             <div className={styles.sam}>
                 <h2>Connected Bank</h2>
                 <div className={styles.sam2}>
-                    {banks.map((bank, index) => (
-                        <BigCard2
-                            key={index}
-                            title={bank.bankName}
-                            mainValue={bank.accountNumber}
-                            subValue={bank.balance}
-                            onClick={() => handleBankClick(bank)}
-                        />
-                    ))}
-                    <div className={styles.add} onClick={openAddBankModal}>
-                        <FaPlus />
-                        <h2>Add Bank</h2>
-                    </div>
-                </div>
+    {banks.map((bank, index) => (
+        <BigCard2
+            key={index}
+            title={bankName}      // Display the account name here
+            mainValue={bank.accountName}  // Display the account number here
+            subValue={bank.accountNumber}        // Display the balance (currently "N/A")
+            onClick={() => handleBankClick(bank)}  // Show bank details on click
+        />
+    ))}
+    <div className={styles.add} onClick={openAddBankModal}>
+        <FaPlus />
+        <h2>Add Bank</h2>
+    </div>
+</div>
+
             </div>
             <div className={styles.buttonspace}>
                 <div className={styles.inputs}>
