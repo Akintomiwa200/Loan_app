@@ -58,7 +58,7 @@
 
 import { createContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types'; // Import PropTypes
-import { getAuth } from 'firebase/auth';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
 
 export const UserContext = createContext();
@@ -70,19 +70,24 @@ export const UserProvider = ({ children }) => {
     const db = getFirestore();
 
     useEffect(() => {
-        const fetchUserData = async () => {
-            const user = auth.currentUser;
+        const unsubscribe = onAuthStateChanged(auth, async (user) => {
             if (user) {
+                // Fetch user data from Firestore using user.uid
                 const docRef = doc(db, 'users', user.uid);
                 const docSnap = await getDoc(docRef);
                 if (docSnap.exists()) {
                     setUserData(docSnap.data());
+                } else {
+                    console.log('No such document!');
                 }
+            } else {
+                setUserData(null); // Reset userData if no user is logged in
             }
             setLoading(false);
-        };
+        });
 
-        fetchUserData();
+        // Cleanup the subscription on unmount
+        return () => unsubscribe();
     }, [auth, db]);
 
     return (

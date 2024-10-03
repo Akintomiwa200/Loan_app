@@ -4,4 +4,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f0f0f0; /* Optional: Change background color to a light gray */
 }
+
+.loadingImage {
+    width: 100px; /* Set desired width for the loading SVG */
+    animation: rotate 1s linear infinite; /* Apply rotation animation */
+}
+
+/* Animation for the loading image */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+    
