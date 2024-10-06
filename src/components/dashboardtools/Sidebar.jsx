@@ -11,7 +11,7 @@ import { UserContext } from '../../context/UserContext';
 const Sidebar = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const { userData, loading } = useContext(UserContext);
+    const { userData } = useContext(UserContext);
 
     const handleTransfer = () => {
         navigate('transfer');
@@ -21,9 +21,9 @@ const Sidebar = () => {
         navigate('profile');
     };
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
+    // if (loading) {
+    //     return <div>Loading...</div>;
+    // }
 
     return (
         <div className={styles.main}>

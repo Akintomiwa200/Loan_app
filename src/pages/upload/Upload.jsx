@@ -36,10 +36,10 @@ const Upload = () => {
     if (address) filledFields++;
     if (file) filledFields++;
 
-    const completionPercentage = 40 + (filledFields / 2) * 40; // Start from 40% and cap at 80%
+    const completionPercentage = 40 + (filledFields / 2) * 60; // Start from 40% and cap at 80%
     setProgress(completionPercentage);
 
-    if (completionPercentage >= 80) {
+    if (completionPercentage >= 100) {
       setProgressColor('green');
     } else {
       setProgressColor('yellow');

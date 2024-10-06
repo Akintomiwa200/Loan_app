@@ -8,7 +8,7 @@ import { UserContext } from '../../context/UserContext';
 const Navbar = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const { userData, loading } = useContext(UserContext);
+    const { userData } = useContext(UserContext);
 
     const handleProfile = () => {
         navigate('profile');
@@ -40,9 +40,9 @@ const Navbar = () => {
         }
     };
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
+    // if (loading) {
+    //     return <div>Loading...</div>;
+    // }
 
     return (
         <div className={styles.main}>
