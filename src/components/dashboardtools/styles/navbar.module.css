@@ -61,6 +61,10 @@
     height: 2em;
     border-radius: 5px;
     background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
 }
 

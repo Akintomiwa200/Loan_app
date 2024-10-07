@@ -24,6 +24,7 @@ const Sidebar = () => {
     // if (loading) {
     //     return <div>Loading...</div>;
     // }
+    const getInitials = (name) => name.split(' ').map(word => word[0]).join('');
 
     return (
         <div className={styles.main}>
@@ -62,13 +63,14 @@ const Sidebar = () => {
                 </div>
                 <div className={styles.glory}>
                     <div className={styles.images} onClick={handleProfile}>
-                        <img
-                            src={userData?.profilePicture || 'path/to/default/image.jpg'} // Fallback to default image
-                            alt='User'
-                        />
+                        {userData?.profilePicture ? (
+                            <img src={userData.profilePicture} alt="User" />
+                        ) : (
+                            <div className={styles.initials}>{getInitials(userData?.name || 'User')}</div>
+                        )}
                         <div className={styles.im}>
-                            <h2>{userData ? userData.name || 'User Name' : 'User Name'}</h2> {/* Fallback for user name */}
-                            <p>{userData ? userData.email || 'user@example.com' : 'user@example.com'}</p> {/* Fallback for email */}
+                            <h2>{userData?.name || 'User Name'}</h2>
+                            <p>{userData?.email || 'user@example.com'}</p>
                         </div>
                     </div>
                 </div>
@@ -78,3 +80,5 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
+
