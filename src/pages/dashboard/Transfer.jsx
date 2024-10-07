@@ -116,20 +116,20 @@ const Transfer = () => {
             <div className={styles.sam}>
                 <h2>Connected Bank</h2>
                 <div className={styles.sam2}>
-    {banks.map((bank, index) => (
-        <BigCard2
-            key={index}
-            title={bankName}      // Display the account name here
-            mainValue={bank.accountName}  // Display the account number here
-            subValue={bank.accountNumber}        // Display the balance (currently "N/A")
-            onClick={() => handleBankClick(bank)}  // Show bank details on click
-        />
-    ))}
-    <div className={styles.add} onClick={openAddBankModal}>
-        <FaPlus />
-        <h2>Add Bank</h2>
-    </div>
-</div>
+                    {banks.map((bank, index) => (
+                        <BigCard2
+                            key={index}
+                            title={bankName}      // Display the account name here
+                            mainValue={bank.accountName}  // Display the account number here
+                            subValue={bank.accountNumber}        // Display the balance (currently "N/A")
+                            onClick={() => handleBankClick(bank)}  // Show bank details on click
+                        />
+                    ))}
+                    <div className={styles.add} onClick={openAddBankModal}>
+                        <FaPlus />
+                        <h2>Add Bank</h2>
+                    </div>
+                </div>
 
             </div>
             <div className={styles.buttonspace}>
@@ -149,6 +149,7 @@ const Transfer = () => {
                     ) : (
                         <select
                             value={bankCode}
+                            className={styles.input}
                             onChange={(e) => handleBankChange(e.target.value)}
                         >
                             <option value="">Select Bank</option>
@@ -177,16 +178,7 @@ const Transfer = () => {
                 </div>
             )}
 
-            {/* Bank Details Modal */}
-            {isDetailsModalOpen && selectedBank && (
-                <div className={styles.modal}>
-                    <h3>Bank Details</h3>
-                    <p>Bank: {selectedBank.bankName}</p>
-                    <p>Account Number: {selectedBank.accountNumber}</p>
-                    <p>Balance: {selectedBank.balance}</p>
-                    <button onClick={() => setIsDetailsModalOpen(false)}>Close</button>
-                </div>
-            )}
+
         </div>
     );
 };

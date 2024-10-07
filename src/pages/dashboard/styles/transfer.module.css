@@ -70,6 +70,7 @@
     gap: 1em;
     margin-top: 1em;
 }
+
 .selectedCard {
     border: 2px solid red;
 }
@@ -92,4 +93,24 @@
 .inputs input[type="text"] {
     width: 72vw;
     height: 3em;
+}
+
+.input {
+    height: 3em;
+    border-radius: 1em;
+    width: 27vw;
+}
+
+
+@media only screen and (max-width:768px){
+    .inputs input[type="text"] {
+            width: 72vw;
+            height: 3em;
+        }
+    
+        .input {
+            height: 3em;
+            border-radius: 1em;
+            width: 27vw;
+        }
 }
