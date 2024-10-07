@@ -11,6 +11,7 @@
 //                     <h6 className={styles.tit}>BALANCE</h6>
 //                     <h2 className={styles.tit2}>#<span>{mainValue}</span></h2>
 //                 </div>
+//                 <div>
 //                     <h6 className={styles.tit}>INTEREST</h6>
 //                     <h2 className={styles.tit2}><span>{subValue}</span>%</h2>
 //                 </div>
