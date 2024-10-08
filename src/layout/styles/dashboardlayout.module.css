@@ -81,4 +81,8 @@
         align-items: center;
         margin: 0 auto;
     }
+    .outlet{
+        margin:4em 0;
+        min-height:85vh;
+        }
 }
