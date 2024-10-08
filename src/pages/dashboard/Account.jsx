@@ -32,7 +32,7 @@ const Account = () => {
                     />
                     <BigCard
                         mainValue='12,345'
-                        subValue='13'
+                        subValue='20'
                         title='current'
                         backgroundColor='#fff6f6'
                         isSelected={selectedCardIndex === 1} // Check if this card is selected
@@ -40,7 +40,7 @@ const Account = () => {
                     />
                     <BigCard
                         mainValue='10,000'
-                        subValue='8'
+                        subValue='25'
                         title='fixed'
                         backgroundColor='#f6f9ff'
                         isSelected={selectedCardIndex === 2} // Check if this card is selected
