@@ -1,18 +1,23 @@
 import { useState, useEffect } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
-import { getStorage, ref, uploadBytes } from 'firebase/storage';
-import styles from './Upload.module.css'; // Import your CSS file
+import { ref, uploadBytes } from 'firebase/storage';
+import firebaseExports from '../../utils/firebase'; // Import your storage instance
+import styles from './Upload.module.css';
 
 const Upload = () => {
+  const { storage } = firebaseExports;
+
   const location = useLocation();
   const navigate = useNavigate();
 
   const [address, setAddress] = useState('');
   const [file, setFile] = useState(null);
   const [error, setError] = useState('');
-  const [progress, setProgress] = useState(location.state?.progress || 40); // Start from previous progress or 40%
+  const [progress, setProgress] = useState(location.state?.progress || 40);
   const [progressColor, setProgressColor] = useState(progress >= 80 ? 'green' : 'yellow');
+  const [isUploading, setIsUploading] = useState(false)
+
 
   const sliderTexts = [
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto nesciunt voluptatum eveniet blanditiis molestias quos ipsam nisi illum?",
@@ -25,28 +30,21 @@ const Upload = () => {
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % sliderTexts.length);
-    }, 4000); // Change slide every 4 seconds
+    }, 4000);
 
-    return () => clearInterval(slideInterval); // Cleanup on unmount
+    return () => clearInterval(slideInterval);
   }, [sliderTexts.length]);
 
-  // Update progress based on address and file selection
   useEffect(() => {
     let filledFields = 0;
     if (address) filledFields++;
     if (file) filledFields++;
 
-    const completionPercentage = 40 + (filledFields / 2) * 60; // Start from 40% and cap at 80%
+    const completionPercentage = 40 + (filledFields / 2) * 60;
     setProgress(completionPercentage);
-
-    if (completionPercentage >= 100) {
-      setProgressColor('green');
-    } else {
-      setProgressColor('yellow');
-    }
+    setProgressColor(completionPercentage >= 100 ? 'green' : 'yellow');
   }, [address, file]);
 
-  // Handle file selection
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
@@ -54,27 +52,21 @@ const Upload = () => {
     }
   };
 
-  // Handle form submission and file upload
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setIsUploading(true);
     if (!file) {
       setError('Please upload a passport document.');
       return;
     }
 
-    const storage = getStorage();
     const storageRef = ref(storage, `documents/${file.name}`);
 
     try {
       await uploadBytes(storageRef, file);
       setError('');
-
-      // Reset progress to 100% after successful upload
       setProgress(100);
       setProgressColor('green');
-
-      // Navigate to login page on successful upload
       navigate('/login');
     } catch (err) {
       setError('Failed to upload document. Please try again.');
@@ -112,12 +104,11 @@ const Upload = () => {
             </div>
           </div>
         </div>
-
         <div className={styles.formContainer}>
           <h3 className={styles.topText}>Join Our Cooperative</h3>
           <p className={styles.formP}>Ogbomoso Ifedayo Alajo Cooperative Investment & Credit Union Limited.</p>
-
-          <div className={styles.progress}>Progress:
+          <div className={styles.progress}>
+            Progress:
             <div className={styles.myProgress}>
               <div
                 className={styles.myBar}
@@ -128,7 +119,6 @@ const Upload = () => {
               ></div>
             </div>
           </div>
-
           <form onSubmit={handleSubmit}>
             {error && <p className={styles.errorMsg}>{error}</p>}
             <div className={styles.inputDiv}>
@@ -141,7 +131,6 @@ const Upload = () => {
                 className={styles.input}
               />
             </div>
-
             <div className={styles.inputDiv}>
               <h3 className={styles.inputText}>Upload Passport</h3>
               <input
@@ -150,18 +139,23 @@ const Upload = () => {
                 className={styles.input}
               />
             </div>
-
             <button className={styles.LogBTn} type="submit">
-              Upload Documents
+              {isUploading ? (
+                <>
+                  Uploading...
+                </>
+              ) : (
+                'Upload Documents'
+              )
+              }
             </button>
-
             <p className={styles.downText}>
               Already have an account? <NavLink className={styles.link} to="/Login">Sign in</NavLink>
             </p>
           </form>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
 

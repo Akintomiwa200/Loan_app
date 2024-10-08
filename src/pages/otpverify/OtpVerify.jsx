@@ -84,11 +84,20 @@ const OtpVerify = () => {
       setOtp(newOtp);
     }
   };
+  const generateOtp = (lenght) => {
+    const digits = '0123456789';
+    let otp = ' ';
+    for (let i = 0; i < lenght; i++) {
+      otp += digits[Math.floor(Math.random() * digits.lenht)]
+    }
+    return otp;
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const enteredOtp = otp.join('');
-    const generatedOtp = "1234"; // Replace with your actual OTP generation logic
+    const generatedOtp = generateOtp(4);
+    console.log(generatedOtp);
 
     if (enteredOtp === generatedOtp) {
       setOtpVerified(true);

@@ -1,12 +1,20 @@
 
-import { useState, useEffect } from 'react';
+
+
+import { useState, useEffect, useContext } from 'react';
 import { BiTransferAlt } from 'react-icons/bi';
 import BigCard from '../../components/dashboardtools/card/bigcard/BigCard';
 import BigCard2 from '../../components/dashboardtools/card/bigcard/BigCard2';
 import { FaPlus } from 'react-icons/fa';
 import styles from './styles/transfer.module.css';
+import { UserContext } from '../../context/UserContext';
+import { doc, updateDoc, arrayUnion } from 'firebase/firestore';
+import firebaseExports from '../../utils/firebase';
+
+const { db } = firebaseExports;
 
 const Transfer = () => {
+    const { userData } = useContext(UserContext); // Get current user data (includes userId)
     const [banks, setBanks] = useState([]); // Holds validated bank accounts
     const [bankCode, setBankCode] = useState(''); // Selected bank code
     const [isModalOpen, setIsModalOpen] = useState(false); // Modal for adding bank
@@ -14,6 +22,8 @@ const Transfer = () => {
     const [bankName, setBankName] = useState(''); // Selected bank name
     const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false); // Modal for bank details
     const [selectedBank, setSelectedBank] = useState(null); // Holds selected bank for details
+    const [selectedCardIndex, setSelectedCardIndex] = useState(null); // For selecting only one BigCard
+    const [selectedBankIndex, setSelectedBankIndex] = useState(null); // For selecting only one BigCard2
 
     const [bankList, setBankList] = useState([]); // List of banks fetched from the API
     const [isLoadingBanks, setIsLoadingBanks] = useState(true); // Loading state for bank list
@@ -52,7 +62,7 @@ const Transfer = () => {
         setBankName(selectedBank ? selectedBank.name : '');
     };
 
-    // Validate account number with the selected bank
+    // Validate account number with the selected bank and save to Firebase
     const validateAccount = async () => {
         if (!accountNumber || !bankCode) {
             alert('Please select a bank and enter an account number');
@@ -70,20 +80,32 @@ const Transfer = () => {
             });
 
             const data = await response.json();
+            console.log('Paystack Response:', data);  // Log response for debugging
 
             if (data.status) {
                 const newBank = {
                     bankName: data.data.bank_name,
                     accountNumber: data.data.account_number,
-                    accountName: data.data.account_name,  // Added account name for potential use
-                    balance: 'N/A', // Set balance or other available fields from API
+                    accountName: data.data.account_name,
                 };
 
                 // Append the new validated bank details to the banks state
                 setBanks((prevBanks) => [...prevBanks, newBank]);
+
+                // Save the account to the current user in Firebase
+                const userDocRef = doc(db, 'users', userData.uid); // Get the document for the user
+                console.log('UserDocRef:', userDocRef);  // Log the reference for debugging
+
+                await updateDoc(userDocRef, {
+                    bankAccounts: arrayUnion(newBank), // Add new bank account to user's bankAccounts array
+                });
+
+                // Clear modal inputs and close modal
+                setAccountNumber('');
+                setBankCode('');
                 setIsModalOpen(false); // Close modal after successful addition
             } else {
-                alert('Account validation failed');
+                alert(`Account validation failed: ${data.message}`);
             }
         } catch (error) {
             console.error('Error validating account:', error);
@@ -91,13 +113,21 @@ const Transfer = () => {
         }
     };
 
+    // Open modal for adding a new bank
     const openAddBankModal = () => {
         setIsModalOpen(true);
     };
 
-    const handleBankClick = (bank) => {
+    // Handle clicking on a bank to view its details
+    const handleBankClick = (bank, index) => {
         setSelectedBank(bank);
+        setSelectedBankIndex(index); // Track selected bank index
         setIsDetailsModalOpen(true);
+    };
+
+    // Handle card selection (only one BigCard1)
+    const handleCardClick = (index) => {
+        setSelectedCardIndex(index); // Ensure only one card is selected at a time
     };
 
     return (
@@ -105,9 +135,13 @@ const Transfer = () => {
             <div className={styles.sam}>
                 <h2>Accounts</h2>
                 <div className={styles.sam2}>
-                    <BigCard />
-                    <BigCard />
-                    <BigCard />
+                    {[0, 1, 2].map((_, index) => (
+                        <BigCard
+                            key={index}
+                            isSelected={selectedCardIndex === index}
+                            onClick={() => handleCardClick(index)}
+                        />
+                    ))}
                 </div>
             </div>
             <div className={styles.tf}>
@@ -119,10 +153,11 @@ const Transfer = () => {
                     {banks.map((bank, index) => (
                         <BigCard2
                             key={index}
-                            title={bankName}      // Display the account name here
-                            mainValue={bank.accountName}  // Display the account number here
-                            subValue={bank.accountNumber}        // Display the balance (currently "N/A")
-                            onClick={() => handleBankClick(bank)}  // Show bank details on click
+                            title={bank.bankName}
+                            mainValue={bank.accountName}
+                            subValue={bank.accountNumber}
+                            isSelected={selectedBankIndex === index}
+                            onClick={() => handleBankClick(bank, index)}
                         />
                     ))}
                     <div className={styles.add} onClick={openAddBankModal}>
@@ -130,7 +165,6 @@ const Transfer = () => {
                         <h2>Add Bank</h2>
                     </div>
                 </div>
-
             </div>
             <div className={styles.buttonspace}>
                 <div className={styles.inputs}>
@@ -160,7 +194,6 @@ const Transfer = () => {
                             ))}
                         </select>
                     )}
-
                     <input
                         type="text"
                         placeholder="Account Number"
@@ -169,7 +202,7 @@ const Transfer = () => {
                     />
                     <span className={styles.buttoncon}>
                         <button className={styles.buttons} onClick={validateAccount}>
-                            Validate & Add
+                            Add Account
                         </button>
                         <button className={styles.buttons} onClick={() => setIsModalOpen(false)}>
                             Cancel
@@ -177,8 +210,6 @@ const Transfer = () => {
                     </span>
                 </div>
             )}
-
-
         </div>
     );
 };
