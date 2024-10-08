@@ -1,9 +1,8 @@
-// context/UserContext.jsx
 import { createContext, useState, useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
-import { doc, getDoc } from 'firebase/firestore';
-import firebaseExports from '..//utils/firebase';
-
+import { doc, getDoc, setDoc } from 'firebase/firestore';
+import firebaseExports from '../utils/firebase';
+import PropTypes from 'prop-types'
 
 const { db, auth } = firebaseExports;
 
@@ -22,21 +21,31 @@ export const UserProvider = ({ children }) => {
                 try {
                     const userRef = doc(db, 'users', user.uid);
                     const userSnap = await getDoc(userRef);
+
                     if (userSnap.exists()) {
+                        // User data found, update state
                         setUserData(userSnap.data());
                     } else {
-                        console.log('No user data found!');
+                        console.log('No user data found! Creating user data.');
+                        // User does not exist, create a new document
+                        await setDoc(userRef, {
+                            email: user.email,
+                            // Add other default user fields as necessary
+                            createdAt: new Date().toISOString(), // Example field
+                        });
+                        setUserData({ email: user.email }); // Update userData with created fields
                     }
                 } catch (error) {
-                    console.error('Error fetching user data:', error);
+                    console.error('Error fetching or creating user data:', error);
                 }
             } else {
+                // User is not authenticated
                 setUserData(null);
             }
-            setLoading(false);
+            setLoading(false); // Set loading to false once the auth state is determined
         });
 
-        return () => unsubscribe();
+        return () => unsubscribe(); // Cleanup listener on unmount
     }, []);
 
     return (
@@ -45,3 +54,9 @@ export const UserProvider = ({ children }) => {
         </UserContext.Provider>
     );
 };
+
+
+
+UserProvider.propTypes = {
+    children: PropTypes.node.isRequired,
+}
