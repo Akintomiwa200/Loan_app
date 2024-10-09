@@ -166,7 +166,7 @@ import { useState, useEffect, useContext } from 'react';
 import firebaseExports from '../../utils/firebase';
 import { setDoc, doc } from 'firebase/firestore';
 import { FaRightLong } from 'react-icons/fa6';
-import { AuthContext } from '../../context/AuthContext'; // Context for user authentication
+import AuthContext from '../../context/AuthContext'; // Context for user authentication
 
 const ContactLoan = () => {
     const [isEdited, setIsEdited] = useState(false);
