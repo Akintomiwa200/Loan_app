@@ -252,6 +252,14 @@ const Transfer = () => {
                         <h2>Add Bank</h2>
                     </div>
                 </div>
+                <div className={styles.buttonspace}>
+                    <div className={styles.inputs}>
+                        <label htmlFor="">Amount</label>
+                        <input type="text" />
+                    </div>
+                    <button className={styles.button1}><BiTransferAlt />Complete Transaction </button>
+                </div>
+
             </div>
 
             {isModalOpen && (

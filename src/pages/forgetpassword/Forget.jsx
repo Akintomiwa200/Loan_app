@@ -66,6 +66,7 @@ const Forget = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
 
     const handleMove = async (e) => {
         e.preventDefault();
@@ -111,11 +112,15 @@ const Forget = () => {
                         name='email'
                         placeholder='Enter your email'
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={(e) => {
+                            setEmail(e.target.value);
+                            setError(''); // Reset error on input change
+                        }}
                     />
                     {error && <p style={{ color: 'red' }}>{error}</p>}
                     <button className={styles.button1} type="submit">Reset Password</button>
                 </form>
+                {success && <p style={{ color: 'green' }}>{success}</p>}
             </div>
         </div>
     );

@@ -92,13 +92,11 @@
 
 
 
-
-
 import { Link } from 'react-router-dom';
 import { useEffect, useState, useContext } from 'react';
 import firebaseExports from '../../utils/firebase';
 import { doc, getDoc } from 'firebase/firestore';
-import { AuthContext } from '../../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext'; // Ensure correct import
 import styles from './styles/applicationsummary.module.css';
 
 const ApplicationSummary = () => {
@@ -120,7 +118,7 @@ const ApplicationSummary = () => {
             }
         };
         fetchLoanData();
-    }, [currentUser]);
+    }, [currentUser, db]); // Added db to dependency array
 
     if (!loanData) {
         return <p>Loading...</p>;

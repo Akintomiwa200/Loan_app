@@ -145,7 +145,7 @@ import firebaseExports from '../../utils/firebase';
 
 const { db } = firebaseExports;
 
-const Transfer = () => {
+const Withdrawal = () => {
   const { userData } = useContext(UserContext);
   const [banks, setBanks] = useState([]);
   const [bankCode, setBankCode] = useState('');
@@ -387,6 +387,14 @@ const Transfer = () => {
             <h2>Add Bank</h2>
           </div>
         </div>
+        <div className={styles.buttonspace}>
+          <div className={styles.inputs}>
+            <label htmlFor="">Amount</label>
+            <input type="text" />
+          </div>
+          <button className={styles.button1}><BiTransferAlt />Complete Transaction </button>
+        </div>
+
       </div>
 
       {isModalOpen && (
@@ -455,4 +463,4 @@ const Transfer = () => {
   );
 };
 
-export default Transfer;
+export default Withdrawal;

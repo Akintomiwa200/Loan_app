@@ -66,15 +66,20 @@
 // };
 
 // export default OtpVerify;
-
 import { useState } from 'react';
-import emailjs from '@emailjs/browser'//ensure you have EmailJS installed
+import {useLocation} from 'react-router-dom'
+import emailjs from '@emailjs/browser'; // Ensure you have EmailJS installed
 import styles from './otpverify.module.css';
 
 const OtpVerify = () => {
   const [otp, setOtp] = useState(['', '', '', '']);
   const [newPassword, setNewPassword] = useState('');
   const [otpVerified, setOtpVerified] = useState(false);
+  const [error, setError] = useState('');
+
+  // Get the OTP from location state (ensure you use useLocation in a real case)
+  const location = useLocation();
+  const { otp: sentOtp} = location.state || {}; // Adjust based on your routing
 
   const handleChange = (e, index) => {
     const value = e.target.value;
@@ -82,22 +87,26 @@ const OtpVerify = () => {
       const newOtp = [...otp];
       newOtp[index] = value;
       setOtp(newOtp);
+
+      // Move to the next input field
+      if (value && index < otp.length - 1) {
+        const nextInput = document.getElementById(`otp-${index + 1}`);
+        nextInput.focus();
+      }
     }
   };
-  const generateOtp = (lenght) => {
-    const digits = '0123456789';
-    let otp = ' ';
-    for (let i = 0; i < lenght; i++) {
-      otp += digits[Math.floor(Math.random() * digits.lenht)]
+
+  const handleBackspace = (e, index) => {
+    if (e.key === 'Backspace' && !otp[index] && index > 0) {
+      const previousInput = document.getElementById(`otp-${index - 1}`);
+      previousInput.focus();
     }
-    return otp;
-  }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const enteredOtp = otp.join('');
-    const generatedOtp = generateOtp(4);
-    console.log(generatedOtp);
+    const generatedOtp = sentOtp; // Use the OTP sent to the user's email
 
     if (enteredOtp === generatedOtp) {
       setOtpVerified(true);
@@ -109,7 +118,7 @@ const OtpVerify = () => {
         import.meta.env.VITE_EMAILJS_USER_ID
       );
     } else {
-      alert('Invalid OTP. Please try again.');
+      setError('Invalid OTP. Please try again.');
     }
   };
 
@@ -122,14 +131,17 @@ const OtpVerify = () => {
             {otp.map((value, index) => (
               <input
                 key={index}
+                id={`otp-${index}`}
                 type='text'
                 value={value}
                 onChange={(e) => handleChange(e, index)}
+                onKeyDown={(e) => handleBackspace(e, index)}
                 className={styles.input}
                 maxLength={1}
               />
             ))}
           </div>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
           {otpVerified && (
             <div className={styles.form}>
               <input
