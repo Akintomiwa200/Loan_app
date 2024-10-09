@@ -104,7 +104,7 @@ import styles from './styles/apply.module.css';
 import { useState, useEffect, useContext } from 'react';
 import firebaseExports from '../../utils/firebase';
 import { setDoc, doc } from 'firebase/firestore';
-import { AuthContext } from '../../context/AuthContext'; // Context for user authentication
+import AuthContext from '../../context/AuthContext'; // Context for user authentication
 
 const ApplyForLoan = () => {
     const [amount, setAmount] = useState('');
