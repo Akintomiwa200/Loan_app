@@ -22,7 +22,7 @@ const TransactionHistory = () => {
 
     return (
         <div>
-            <h2>Transaction History</h2>
+
             <div className={styles.content}>
                 <div className={styles.list2}>
                     <div className={styles.h3}>

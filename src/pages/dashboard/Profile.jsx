@@ -14,11 +14,11 @@ const { auth, db, storage } = firebaseExports;
 
 const Profile = () => {
   const navigate = useNavigate();
-  const { userData, setUserData } = useContext(UserContext); // Access user data from context
-  const [isEditMode, setIsEditMode] = useState(false); // State to toggle the edit modal
+  const { userData, setUserData } = useContext(UserContext);
+  const [isEditMode, setIsEditMode] = useState(false);
   const [updatedName, setUpdatedName] = useState(userData?.name || '');
   const [updatedEmail, setUpdatedEmail] = useState(userData?.email || '');
-  const [updatedImage, setUpdatedImage] = useState(null); // State to hold the selected image
+  const [updatedImage, setUpdatedImage] = useState(null);
 
   // Function to open the edit profile modal
   const handleEditProfile = () => {
@@ -27,26 +27,29 @@ const Profile = () => {
 
   // Function to close the edit profile modal
   const handleCloseModal = () => {
-    setIsEditMode(false); // Close the modal
+    setIsEditMode(false);
   };
 
   // Function to handle image change
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setUpdatedImage(file); // Store the selected image
+      setUpdatedImage(file);
     }
   };
 
   // Function to save the edited profile details (including image) to Firebase
   const handleSaveProfile = async () => {
+    console.log('Attempting to save profile...');
+
     if (!updatedName || !updatedEmail) {
       alert('Please fill in all fields');
       return;
     }
 
     try {
-      const userDocRef = doc(db, 'users', userData.uid); // Get the user's Firestore document reference
+      const userDocRef = doc(db, 'users', userData.uid);
+      console.log('User document reference:', userDocRef.id);
 
       let updatedData = {
         name: updatedName,
@@ -55,25 +58,27 @@ const Profile = () => {
 
       // If a new image is selected, upload it to Firebase Storage
       if (updatedImage) {
-        const imageRef = ref(storage, `profileImages/${userData.uid}`); // Reference to the image path in storage
-        await uploadBytes(imageRef, updatedImage); // Upload the selected image
-        const imageURL = await getDownloadURL(imageRef); // Get the download URL
-
-        updatedData.profilePicture = imageURL; // Update the profile picture URL in Firestore
+        const imageRef = ref(storage, `profileImages/${userData.uid}`);
+        console.log('Uploading image to:', imageRef.fullPath);
+        await uploadBytes(imageRef, updatedImage);
+        const imageURL = await getDownloadURL(imageRef);
+        updatedData.profilePicture = imageURL;
+        console.log('Uploaded image URL:', imageURL);
       }
 
-      // Update Firestore with the new data (including name, email, and optionally profilePicture)
+      // Update Firestore with the new data
       await updateDoc(userDocRef, updatedData);
+      console.log('Profile updated successfully:', updatedData);
 
       // Update the context with the new user data
       setUserData((prev) => ({
         ...prev,
         name: updatedName,
         email: updatedEmail,
-        profilePicture: updatedData.profilePicture || prev.profilePicture, // Use updated image if it exists, otherwise keep the old one
+        profilePicture: updatedData.profilePicture || prev.profilePicture,
       }));
 
-      setIsEditMode(false); // Close modal after saving
+      setIsEditMode(false);
       alert('Profile updated successfully!');
     } catch (error) {
       console.error('Error updating profile:', error);
@@ -97,10 +102,19 @@ const Profile = () => {
     navigate('/support');
   };
 
-  // Function to sign out user in real-time
+  // Function to sign out user in real-time and close the session
   const handleSignOut = async () => {
     try {
-      await signOut(auth); // Sign out using Firebase authentication
+      // Clear any user data from local storage or context before signing out
+      localStorage.removeItem('userSession'); // Adjust if you're using a different key
+      setUserData(null); // Clear user data from context
+
+      // Sign out using Firebase authentication
+      await signOut(auth);
+
+      // Optionally, inform other parts of the app that the user has signed out
+      // This can be done via context, state management, or an event emitter
+
       alert('Signed out successfully!');
       navigate('/login'); // Redirect to the login page after signing out
     } catch (error) {
@@ -108,6 +122,7 @@ const Profile = () => {
       alert('Failed to sign out. Please try again.');
     }
   };
+
 
   return (
     <div className={styles.main}>
@@ -154,11 +169,9 @@ const Profile = () => {
               onChange={(e) => setUpdatedEmail(e.target.value)}
               placeholder="Update Email"
             />
-
             {/* File input for profile image */}
             <input type="file" onChange={handleImageChange} />
             <span>
-
               <button className={styles.saveButton} onClick={handleSaveProfile}>
                 Save
               </button>
@@ -166,7 +179,6 @@ const Profile = () => {
                 Cancel
               </button>
             </span>
-
           </div>
         </div>
       )}
